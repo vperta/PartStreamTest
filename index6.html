@@ -17,10 +17,6 @@
             var refreshToken = getUrlParameter('refresh_token');
             var expiresIn = getUrlParameter('expires_in');
 
-            const urlParams = new URLSearchParams(window.location.search);
-            
-            alert(urlParams.get('access_token'));
-            
             var script = document.createElement('script');
             script.src = 'https://www.partsmart.net/stream.js?access_token='+accessToken+'&refresh_token='+refreshToken+'&expires_in='+expiresIn;
             document.body.appendChild(script);
