@@ -47,6 +47,9 @@ var callback = function(mutationsList, observer) {
             console.log('A child node has been added or removed.');
             mutation.addedNodes.forEach(node => {
                 console.log('Added node:', node);
+
+                var ari = document.getElementById('ari-convergence-container');
+                ari.style.height = window.innerHeight + 'px';
             });
         }
     }
