@@ -20,12 +20,8 @@
             var script = document.createElement('script');
             script.src = 'https://www.partsmart.net/stream.js?access_token='+accessToken+'&refresh_token='+refreshToken+'&expires_in='+expiresIn;
             document.body.appendChild(script);
-        });
-        
-        document.addEventListener("load", function() {            
-            // Set the height of the div to the full height of the viewport
-            var ari = document.getElementById('ari-convergence-container');
-            ari.style.height = window.innerHeight + 'px';
+
+            document.resize();
         });
 
         // Update the div height on window resize
