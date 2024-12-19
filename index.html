@@ -18,8 +18,8 @@
             var expiresIn = getUrlParameter('expires_in');
 
             var script = document.createElement('script');
-            script.src = 'https://www.partsmart.net/stream.js?access_token='+accessToken+'&refresh_token='+refreshToken+'&expires_in='+expiresIn';
-            document.head.appendChild(script);
+            script.src = 'https://www.partsmart.net/stream.js?access_token='+accessToken+'&refresh_token='+refreshToken+'&expires_in='+expiresIn;
+            document.body.appendChild(script);
         });
     </script>
 </head>
