@@ -25,8 +25,8 @@
         // Update the div height on window resize
         window.addEventListener('resize', function() {
             var ari = document.getElementById('ari-convergence-container');
-            ari.style.height = (window.innerHeight - 20) + 'px';
-            ari.style.width = (window.innerWidth - 20) + 'px';
+            ari.style.height = (window.innerHeight - 15) + 'px';
+            ari.style.width = (window.innerWidth - 15) + 'px';
         });        
 
         // Select the target node (the element to observe)
@@ -44,8 +44,8 @@
                         console.log('Added node:', node);
 
                         if (node.id == 'ari-convergence-container') {
-                            node.style.height = (window.innerHeight - 20) + 'px';                            
-                            node.style.width = (window.innerWidth - 20) + 'px';
+                            node.style.height = (window.innerHeight - 18) + 'px';                            
+                            node.style.width = (window.innerWidth - 18) + 'px';
                         }
                     });
                 }
