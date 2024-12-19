@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Token Page</title>
+    <script>
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            var accessToken = getUrlParameter('access_token');
+            var refreshToken = getUrlParameter('refresh_token');
+            var expiresIn = getUrlParameter('expires_in');
+
+            var script = document.createElement('script');
+            script.src = `https://www.partsmart.net/stream.js?access_token=${accessToken}&refresh_token=${refreshToken}&expires_in=${expiresIn}`;
+            document.head.appendChild(script);
+        });
+    </script>
+</head>
+<body>
+    <h1>Token Page</h1>
+    <p>This page accepts access token, refresh token, and expiration time as URL parameters.</p>
+</body>
+</html>
