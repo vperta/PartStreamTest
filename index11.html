@@ -12,6 +12,11 @@
             return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
         }
 
+        function scriptLoaded() {
+            var ari = document.getElementById('ari-convergence-container');
+            ari.style.height = window.innerHeight + 'px';
+        }
+        
         document.addEventListener("DOMContentLoaded", function() {
             var accessToken = getUrlParameter('access_token');
             var refreshToken = getUrlParameter('refresh_token');
@@ -19,6 +24,7 @@
 
             var script = document.createElement('script');
             script.src = 'https://www.partsmart.net/stream.js?access_token='+accessToken+'&refresh_token='+refreshToken+'&expires_in='+expiresIn;
+            script.onload = 'scriptLoaded()';
             document.body.appendChild(script);
 
             document.resize();
