@@ -26,8 +26,6 @@
             script.src = 'https://www.partsmart.net/stream.js?access_token='+accessToken+'&refresh_token='+refreshToken+'&expires_in='+expiresIn;
             script.onload = 'scriptLoaded()';
             document.body.appendChild(script);
-
-            document.resize();
         });
 
         // Update the div height on window resize
